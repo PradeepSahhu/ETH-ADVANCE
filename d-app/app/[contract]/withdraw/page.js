@@ -177,6 +177,20 @@ export default function Withdrawal({ params }) {
     }
   }
 
+  async function tokenVastingWithdraw() {
+    const mainConnection = await MainEstablishConnection(params.contract);
+    try {
+      if (walletProvider) {
+        const resAns = await mainConnection.withDrawTokens(vastingTime);
+      }
+    } catch (error) {
+      console.log(
+        "There is somethign wrong in index in pseduoWithDrawTokens function"
+      );
+      console.log(error);
+    }
+  }
+
   async function getMyBalance() {
     const mainConnection = await MainEstablishConnection(params.contract);
     try {
@@ -306,10 +320,16 @@ export default function Withdrawal({ params }) {
             </div>
             <div className="grid col-start-1 col-end-2 justify-center items-center">
               <button
-                className="px-10 py-8 my-6 bg-blue-600 rounded-md grid justify-center"
+                className="px-10 py-8 my-6 bg-red-900 rounded-lg grid justify-center"
                 onClick={tokenWithdraw}
               >
                 Withdraw Now
+              </button>
+              <button
+                className="px-10 py-8 my-6 bg-[#01204E] rounded-lg grid justify-center hover:bg-black"
+                onClick={tokenVastingWithdraw}
+              >
+                Withdraw with Vasting Now
               </button>
             </div>
           </div>
