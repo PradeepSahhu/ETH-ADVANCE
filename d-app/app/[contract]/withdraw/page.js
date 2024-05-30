@@ -5,6 +5,7 @@ import MainEstablishConnection from "@/Ethereum/MainConnection";
 import Animation from "@/app/Animation";
 import { useEffect, useState } from "react";
 import ConvertNumberToDate from "@/Ethereum/NUMTODATE";
+import CurrentVasting from "@/Ethereum/Vasting";
 
 export default function Withdrawal({ params }) {
   // const router = useRouter();
@@ -179,9 +180,13 @@ export default function Withdrawal({ params }) {
 
   async function tokenVastingWithdraw() {
     const mainConnection = await MainEstablishConnection(params.contract);
+    const currentDateVasting = CurrentVasting();
+    console.log(
+      "The current Date" + currentDateVasting + typeof currentDateVasting
+    );
     try {
       if (walletProvider) {
-        const resAns = await mainConnection.withDrawTokens(vastingTime);
+        const resAns = await mainConnection.withDrawTokens(currentDateVasting);
       }
     } catch (error) {
       console.log(
