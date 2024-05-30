@@ -159,11 +159,11 @@ function Content({ params }) {
         {walletProvider == owner && (
           <div className="grid grid-col-2 gap-2 bg-slate-700 m-32 rounded-md border-solid-900 outline-double outline-pink-900">
             <h1 className="col-start-1 col-end-2 grid justify-center px-10 py-5 text-4xl">
-              Contributor Details
+              Stake Holder Details
             </h1>
             <div className="grid col-start-1 col-end-2 my-2">
               <p className="col-start-1 col-end-1 ml-10 grid text-2xl justify-center">
-                Enter the Contributor Address
+                Enter the stake Holder Address
               </p>
               <input
                 className="grid justify-start col-start-2 col-end-3 px-20 placeholder:place-content-center py-4 mx-12 text-black rounded-lg outline-double outline-blue-900"
@@ -174,7 +174,7 @@ function Content({ params }) {
             </div>
             <div className="grid col-start-1 col-end-2 my-2">
               <p className="col-start-1 col-end-1 ml-10 grid text-2xl justify-center">
-                Enter the Contributor Type
+                Enter the Stake Holder Type
               </p>
               <select
                 className="grid justify-start col-start-2 col-end-3 px-20 placeholder:place-content-center py-4 mx-12 text-black rounded-lg outline-double outline-blue-900"
@@ -190,23 +190,23 @@ function Content({ params }) {
             </div>
             <div className="grid col-start-1 col-end-2 my-2">
               <p className="col-start-1 col-end-1 ml-10 grid text-2xl justify-center">
-                Enter the Contributor Token Amt
+                Enter the Stake Holder Token Amt
               </p>
               <input
                 className="grid justify-start col-start-2 col-end-3 px-20 placeholder:place-content-center py-4 mx-12 text-black rounded-lg outline-double outline-blue-900"
                 required
-                placeholder="Enter the address of the contributor"
+                placeholder="Enter the amount stake holder donated"
                 onChange={(e) => setContriAmount(parseInt(e.target.value))}
               />
             </div>
             <div className="grid col-start-1 col-end-2 my-2">
               <p className="col-start-1 col-end-1 ml-10 grid text-2xl justify-center">
-                Enter the Contributor timeLock
+                Enter the Stake Holder timeLock
               </p>
               <input
                 className="grid justify-start col-start-2 col-end-3 px-20 placeholder:place-content-center py-4 mx-12 text-black rounded-lg outline-double outline-blue-900"
                 required
-                placeholder="Enter the address of the contributor"
+                placeholder="Enter the date of stake holder"
                 onChange={(e) => setContriDate(e.target.value)}
                 type="date"
               />
@@ -216,7 +216,7 @@ function Content({ params }) {
                 className="px-10 py-5 bg-black hover:bg-rose-900 mt-10 justify-center grid rounded-md"
                 onClick={addStackHolders}
               >
-                Register the Contributor
+                Register the Stake Holder
               </button>
             </div>
           </div>
